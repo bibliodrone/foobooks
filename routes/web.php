@@ -13,9 +13,18 @@
 
 Route::view('/', 'welcome');
 Route::get('/books', 'BookController@index');
+//Added week 8:
+Route::get('/books/create', 'BookController@create');
+Route::post('/books', 'BookController@store');
+Route::get('/books/search', 'BookController@search');
+Route::get('/books/search-process', 'BookController@searchProcess');
 Route::get('/books/{title}', 'BookController@show');
+/**
+* Practice
+* Added Week 7
+*/
+Route::any('/practice/{n?}', 'PracticeController@index');
 
-/* Introduce error by calling non-existent view file 'abc'
-Route::get('/example', function () {
-    return view('abc');
-}); */
+# Example routes from the discussion of P3 development (Week 6, Part 8 video)
+//Route::get('/', 'TriviaController@index');
+//Route::get('/check-answer', 'TriviaController@checkAnswer');
