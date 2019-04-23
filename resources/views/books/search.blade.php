@@ -33,7 +33,7 @@ Search
             <div class='book'>
                 <h3>{{ $title }}</h3>
                 <h4>by {{ $book['author'] }}</h4>
-                <img src='{{ $book['cover_url'] }}' alt='Cover image for the book {{ $title }}'>
+                <img src="{{ $book['cover_url'] }}" alt='Cover image for the book {{ $title }}'>
             </div>
         @endforeach
     @endif
