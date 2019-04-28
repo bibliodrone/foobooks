@@ -45,29 +45,29 @@ class PracticeController extends Controller
     public function practice6()
     {
         #Retrieve the last 2 books that were added to the books table.
-        $result = Book::orderBy('id', 'desc')->limit(2)->get();
-        dump($result->toArray());
+        $results = Book::orderBy('id', 'desc')->limit(2)->get();
+        dump($results->toArray());
     }
     
     public function practice7()
     {
         #Retrieve all the books published after 1950.
-        $result = Book::where('published_year', '>', '1950')->get();
-        dump($result->toArray());
+        $results = Book::where('published_year', '>', '1950')->get();
+        dump($results->toArray());
     }
     
     public function practice8()
     {
         #Retrieve all the books in alphabetical order by title
-        $result = Book::orderBy('title')->get();
-        dump($result->toArray());
+        $results = Book::orderBy('title')->get();
+        dump($results->toArray());
     }
     
     public function practice9()
     {
         #Retrieve all the books in descending order according to published date
-        $result = Book::orderBy('published_year', 'desc')->get();
-        dump($result->toArray());
+        $results = Book::orderBy('published_year', 'desc')->get();
+        dump($results->toArray());
     }
         
     public function practice10()
@@ -82,7 +82,8 @@ class PracticeController extends Controller
     public function practice11()
     {
         #Remove any/all books with an author name that includes the string “Rowling”.
-        $results = Book::where('author', '=', 'J.K. Rowling')->delete();
+        $results = Book::where('author', '=', 'J.K. Rowling')->get();
+        $results->delete();
     }
     public function practice3()
     {
